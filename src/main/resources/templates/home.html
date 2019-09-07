@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>sample -SpringBoot-</title>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-</head>
+<head th:include="layout :: layout-head"></head>
 <body>
-<body>
-<div th:text="${message}"></div>
+    <th:block th:replace="layout :: layout-menu"></th:block>
+
+    <div class="ui main text container">
+        <h1 class="ui header"> [[${userName}]]!!! Welcome to Spring Security Sample!</h1>
+        <p>Once upon a time, there lived an old couple in a small village.</p>
+        <p>One day the old wife was washing her clothes in the river when a huge peach came tumbling down the stream.
+           The old woman brought the peach home and cut it up to share with her husband.</p>
+        <p>To their great surprise, a healthy baby boy came right out of the peach!
+           The old couple said, “Let’s name him Momotaro (Peach-boy) as he was born from a peach.”</p>
+        <p>They brought him up with love and care.</p>
+
+        <p>Momo-taro grew up rapidly into a strong boy.
+
+        <p>One day, he said to the old couple,
+           “Dear Grandma and Grandpa, I am going to fight and kill evil demons.”
+           The old couple made some millet dumplings for Momo-taro to take with him.</p>
+
+        <p>As Momo-taro walked toward Demon’s Island, a dog approached him and said,
+           “Hello, Momo-taro, can I have one of your millet dumplings, please?”
+           “ You can, if you come with me to fight and kill bad demons,” said Momo-taro.</p>
+
+
+        <p>Then, as Momo-taro and the dog went further on, a pheasant came up to them and said, “Hello, Momo-taro, can I have one of your millet dumplings that you’re carrying around your waist?”
+           “Sure you can, if you come with us to fight and kill bad demons,” said Momo-taro.</p>
+
+        <p>As the three went on, a monkey showed up and said,
+           “Hello, Momo-taro, can I have one of your millet dumplings from around your waist?”
+           “You sure can, if you come with us to fight and kill bad demons,” said Momo-taro.</p>
+
+        <p>Thus, Momo-taro with the dog, pheasant, and monkey as his companions crossed over to Demon’s Island.</p>
+
+        <p>As soon as they arrived on the island, red demons and blue demons attacked them,shouting, “What are you here for, you cocky people? We’ll knock you out!”
+           The pheasant pecked at demon's heads, the monkey scratched their faces, the dog bit them on the leg, and Momo-taro swung his sword at them.</p>
+
+        <p>“We’re sorry, so sorry.We won’t harm anyone any more. So please forgive us.”
+           The demons begged and surrendered.
+           Then they offered many treasures to Momo-taro.</p>
+    </div>
+
+    <th:block th:replace="layout :: layout-footer"></th:block>
 </body>
 </html>

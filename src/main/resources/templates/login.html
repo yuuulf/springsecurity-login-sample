@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: layout-head"></head>
+<body class="login-page">
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <div class="column ui form segment">
+            <h1 class="ui teal header" th:text="Login"></h1>
+            <form class="ui large fluid form" th:action="@{'/login'}" th:object = "${loginForm}" method="post">
+                <div class="field align-left">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input id="email" type="text" class="form-control" th:field="*{email}" name="email" placeholder="mail address">
+                    </div>
+                </div>
+                <div class="field align-left">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input id="password" type="password" class="form-control" th:field="*{password}" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <div id="login-error" th:if="${param.error}" th:text="#{certification_error}"></div>
+                <div class="ui fluid large teal submit button">Login</div>
+            </form>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+$(function () {
+   $('.ui.form').form({
+     fields: {
+       email: {
+         identifier  : 'email',
+         rules: [
+           {
+             type   : 'empty',
+             prompt : /*[[#{notempty_message}]]*/
+           },
+           {
+             type   : 'email',
+             prompt : /*[[#{valid_mail_message}]]*/
+           },
+           {
+             type   : 'maxLength[254]',
+             prompt : /*[[#{length_message}]]*/
+           }
+         ]
+       },
+       password: {
+         identifier  : 'password',
+         rules: [
+           {
+             type   : 'empty',
+             prompt : /*[[#{notempty_message}]]*/
+           }
+         ]
+       }
+     },
+     inline: true,
+     on: 'blur'
+   });
+ });
+</script>
+</body>
+</html>
